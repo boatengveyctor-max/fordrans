@@ -1,0 +1,65 @@
+/* Fordrans Adventures - component styles.
+   Layout and spacing come from Tailwind utility classes in index.html / script.js.
+   Brand palette (flat colours only, no gradients):
+   navy #0A2540 | deep #0D3A66 | brand #0072CE | sky #00A3E0 | sand #D4A373 | canvas #F4F7FA */
+
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  /* keep content clear of phone notches / system bars */
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+html { scroll-padding-top: calc(5rem + env(safe-area-inset-top, 0px)); }
+
+body {
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  background: #fff;
+  color: #0A2540;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* ---------- Form controls ---------- */
+.inp {
+  width: 100%;
+  border: 2px solid #cbd5e1;
+  border-radius: .5rem;
+  background: #fff;
+  color: #0A2540;
+  padding: .625rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.inp:focus {
+  outline: none;
+  border-color: #0072CE;
+  box-shadow: 0 0 0 3px rgba(0, 163, 224, .4);
+}
+
+/* ---------- Buttons ---------- */
+.btn, .btn-primary, .btn-light, .btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: .5rem;
+  padding: .75rem 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color .15s, color .15s;
+}
+.btn:focus-visible, .btn-primary:focus-visible, .btn-light:focus-visible, .btn-outline:focus-visible {
+  outline: 2px solid #00A3E0;
+  outline-offset: 2px;
+}
+
+.btn-primary { background: #0072CE; color: #fff; border: 2px solid #0072CE; }
+.btn-primary:hover { background: #0060B0; border-color: #0060B0; }
+
+.btn-light { border: 2px solid #fff; color: #fff; }
+.btn-light:hover { background: #fff; color: #0A2540; }
+
+.btn-outline { border: 2px solid #0072CE; color: #0072CE; }
+.btn-outline:hover { background: #0072CE; color: #fff; }

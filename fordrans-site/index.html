@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fordrans Adventures | Your Passport to Adventure</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script src="tailwind-config.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ NAVIGATION ============ -->
+<header class="fixed inset-x-0 top-0 z-40 bg-navy text-white shadow-md" style="padding-top:env(safe-area-inset-top,0px)">
+  <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
+    <a href="#top" class="flex items-center gap-2 font-extrabold tracking-tight">
+      <span class="grid h-9 w-9 place-items-center rounded-lg bg-brand text-sm">FA</span>
+      <span>Fordrans Adventures</span>
+    </a>
+    <nav class="hidden items-center gap-7 text-sm font-semibold md:flex" aria-label="Main">
+      <a class="hover:text-sky" href="#services">Services</a>
+      <a class="hover:text-sky" href="#builder">Custom Trip Builder</a>
+      <a class="hover:text-sky" href="#about">About</a>
+      <a class="hover:text-sky" href="#contact">Contact</a>
+      <button class="btn-primary !py-2" data-book>Book Now</button>
+    </nav>
+    <button id="menuBtn" class="rounded-lg p-2 hover:bg-deep md:hidden" aria-label="Open menu" aria-expanded="false">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <nav id="menu" class="hidden border-t border-deep bg-navy px-4 pb-4 md:hidden" aria-label="Mobile">
+    <a class="block py-3 font-semibold" href="#services">Services</a>
+    <a class="block py-3 font-semibold" href="#builder">Custom Trip Builder</a>
+    <a class="block py-3 font-semibold" href="#about">About</a>
+    <a class="block py-3 font-semibold" href="#contact">Contact</a>
+    <button class="btn-primary mt-1 w-full" data-book>Book Now</button>
+  </nav>
+</header>
+
+<main id="top">
+<!-- ============ HERO ============ -->
+<section class="relative overflow-hidden bg-navy pb-20 pt-28 text-white md:pt-36">
+  <div class="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-deep" aria-hidden="true"></div>
+  <div class="relative mx-auto grid max-w-6xl items-center gap-12 px-4 md:grid-cols-2">
+    <div>
+      <p class="mb-4 inline-block rounded-full border-2 border-sand px-3 py-1 text-sm font-semibold text-sand">Explore. Dream. Discover.</p>
+      <h1 class="text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">Your passport to adventure.</h1>
+      <p class="mt-5 max-w-lg text-lg text-slate-200">Flights, hotels, visas, tours and every detail in between. Tell us where you want to go and we’ll take care of getting you there.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#services" class="btn-primary">Explore services</a>
+        <a href="#builder" class="btn-light">Plan custom trip</a>
+      </div>
+    </div>
+    <!-- Boarding pass card -->
+    <div class="mx-auto w-full max-w-md rotate-2 overflow-hidden rounded-2xl bg-white text-navy shadow-md" aria-hidden="true">
+      <div class="flex items-center justify-between bg-brand px-5 py-3 font-bold text-white"><span>Fordrans Adventures</span><span class="text-sm">Boarding pass</span></div>
+      <div class="grid grid-cols-2 gap-4 p-5 text-sm">
+        <div><p class="text-slate-500">Passenger</p><p class="text-lg font-bold">You</p></div>
+        <div><p class="text-slate-500">Destination</p><p class="text-lg font-bold">Your dream trip</p></div>
+        <div><p class="text-slate-500">We arrange</p><p class="font-bold">Flights, stays, visas</p></div>
+        <div><p class="text-slate-500">Status</p><p class="font-bold text-brand">Ready when you are</p></div>
+      </div>
+      <div class="border-t-2 border-dashed border-slate-300 p-5">
+        <div id="barcode" class="flex h-12 items-stretch gap-[3px]"></div>
+        <p class="mt-3 text-center text-sm font-bold text-amber-700">Your journey, our priority</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" class="bg-canvas py-20">
+  <div class="mx-auto max-w-6xl px-4">
+    <h2 class="text-3xl font-extrabold sm:text-4xl">Everything for the journey, in one place</h2>
+    <p class="mt-3 max-w-2xl text-slate-600">Pick a service to start a booking. We’ll confirm details and pricing with you directly.</p>
+    <div id="svcGrid" class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"></div>
+  </div>
+</section>
+
+<!-- ============ CUSTOM TRIP BUILDER ============ -->
+<section id="builder" class="bg-white py-20">
+  <div class="mx-auto grid max-w-6xl gap-10 px-4 lg:grid-cols-5">
+    <div class="lg:col-span-2">
+      <h2 class="text-3xl font-extrabold sm:text-4xl">Design your adventure</h2>
+      <p class="mt-3 text-slate-600">Tell us exactly what you want. The more you share, the closer our first proposal will be.</p>
+      <ol class="mt-8 space-y-5">
+        <li class="flex gap-4"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-navy font-bold text-white">1</span><p><b>Share your wishlist.</b> Destination, style, budget and dates.</p></li>
+        <li class="flex gap-4"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-navy font-bold text-white">2</span><p><b>Send it to our team.</b> One tap on WhatsApp or email.</p></li>
+        <li class="flex gap-4"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-navy font-bold text-white">3</span><p><b>Get your proposal.</b> We reply with an itinerary and a quote.</p></li>
+      </ol>
+    </div>
+    <div class="rounded-2xl border-2 border-slate-200 bg-canvas p-5 shadow-md sm:p-8 lg:col-span-3" id="tripBox"></div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="bg-canvas py-20">
+  <div class="mx-auto max-w-6xl px-4">
+    <h2 class="max-w-2xl text-3xl font-extrabold sm:text-4xl">More than travel. We create memories.</h2>
+    <p class="mt-4 max-w-2xl text-slate-600">Fordrans Adventures plans trips for individuals, families and groups, from a single flight to a fully guided tour. We look after the details so you can enjoy the journey.</p>
+    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="rounded-xl border-t-4 border-brand bg-white p-6 shadow-md"><h3 class="text-lg font-bold">Fly</h3><p class="mt-2 text-slate-600">Domestic and international flights, with cabin upgrades and extra baggage when you need them.</p></div>
+      <div class="rounded-xl border-t-4 border-sky bg-white p-6 shadow-md"><h3 class="text-lg font-bold">Stay</h3><p class="mt-2 text-slate-600">Hotels and resorts worldwide, matched to your style and budget.</p></div>
+      <div class="rounded-xl border-t-4 border-sand bg-white p-6 shadow-md"><h3 class="text-lg font-bold">Explore</h3><p class="mt-2 text-slate-600">Group and individual tour packages, plus visa help and travel insurance.</p></div>
+      <div class="rounded-xl border-t-4 border-navy bg-white p-6 shadow-md"><h3 class="text-lg font-bold">Experience</h3><p class="mt-2 text-slate-600">Lounge access, VIP protocol, transfers and car hire for a smoother trip.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="bg-brand py-16 text-white">
+  <div class="mx-auto max-w-6xl px-4">
+    <h2 class="text-3xl font-extrabold sm:text-4xl">Talk to us</h2>
+    <p class="mt-3 max-w-xl text-blue-50">Ready to go, or just wondering? Reach us any way that suits you.</p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a class="btn bg-white text-navy hover:bg-canvas" data-wa href="#">WhatsApp 0505080735</a>
+      <a class="btn-light" data-tel href="#">Call us</a>
+      <a class="btn-light" data-mail href="#">Email us</a>
+      <a class="btn-light" href="https://www.tiktok.com/@fordransadventures" target="_blank" rel="noopener">TikTok @fordransadventures</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-navy text-slate-300">
+  <div class="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:grid-cols-3">
+    <div>
+      <p class="flex items-center gap-2 text-lg font-extrabold text-white"><span class="grid h-9 w-9 place-items-center rounded-lg bg-brand text-sm">FA</span>Fordrans Adventures</p>
+      <p class="mt-3">More than travel… we create memories. Your journey, our priority.</p>
+    </div>
+    <div>
+      <p class="font-bold text-white">Quick links</p>
+      <ul class="mt-3 space-y-2"><li><a class="hover:text-sky" href="#services">Services</a></li><li><a class="hover:text-sky" href="#builder">Custom Trip Builder</a></li><li><a class="hover:text-sky" href="#about">About</a></li><li><a class="hover:text-sky" href="#contact">Contact</a></li></ul>
+    </div>
+    <div>
+      <p class="font-bold text-white">Contact</p>
+      <ul class="mt-3 space-y-2"><li><a class="hover:text-sky" data-mail href="#" id="ftMail"></a></li><li><a class="hover:text-sky" data-tel href="#">0505080735</a></li><li>TikTok: @fordransadventures</li></ul>
+    </div>
+  </div>
+  <p class="border-t border-deep px-4 py-5 text-center text-sm">© <span id="yr"></span> Fordrans Adventures. All rights reserved.</p>
+</footer>
+
+<!-- ============ BOOKING MODAL ============ -->
+<dialog id="bk" class="w-[min(92vw,34rem)] max-h-[90vh] overflow-y-auto rounded-2xl p-0 shadow-md backdrop:bg-navy/70">
+  <div class="flex items-center justify-between bg-navy px-5 py-4 text-white">
+    <h2 class="text-xl font-extrabold">Book a service</h2>
+    <button id="bkClose" class="rounded-lg p-1 hover:bg-deep" aria-label="Close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div id="bkBody" class="p-5 sm:p-6"></div>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
